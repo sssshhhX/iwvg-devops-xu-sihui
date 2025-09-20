@@ -33,6 +33,7 @@ jobs:
       #    GitHub → Settings → Developer settings → Personal access tokens → Generate new token (classic)
       #    Permisos mínimos: write:packages, read:packages, delete:packages, repo
       #
+
       # 2º Crear secret en GitHub:
       #    Repo → Settings → Secrets and variables → Actions → New repository secret
       #    Name: GHCR_PERSONAL_ACCESS_TOKEN, Value: <tu token>
