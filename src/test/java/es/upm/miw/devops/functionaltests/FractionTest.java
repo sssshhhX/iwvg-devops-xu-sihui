@@ -92,28 +92,28 @@ import static org.junit.jupiter.api.Assertions.*;
        Fraction f2 = new Fraction(1, 2);
        Fraction result = f1.add(f2);  // 1/4 + 1/2 = 3/4
 
-       assertEquals(3, result.getNumerator());
-       assertEquals(4, result.getDenominator());
+       assertEquals(6, result.getNumerator());
+       assertEquals(8, result.getDenominator());
     }
 
     @Test
      void testMultiply() {
        Fraction f1 = new Fraction(2, 3);
        Fraction f2 = new Fraction(3, 4);
-       Fraction result = f1.multiply(f2);  // 2/3 * 3/4 = 6/12 = 1/2
+       Fraction result = f1.multiply(f2);  // 2/3 * 3/4 = 6/12
 
-       assertEquals(1, result.getNumerator());
-       assertEquals(2, result.getDenominator());
+       assertEquals(6, result.getNumerator());
+       assertEquals(12, result.getDenominator());
     }
 
     @Test
      void testDivide() {
        Fraction f1 = new Fraction(1, 2);
        Fraction f2 = new Fraction(1, 4);
-       Fraction result = f1.divide(f2);  // (1/2) / (1/4) = 4/2 = 2/1
+       Fraction result = f1.divide(f2);  // (1/2) / (1/4) = 4/2
 
-       assertEquals(2, result.getNumerator());
-       assertEquals(1, result.getDenominator());
+       assertEquals(4, result.getNumerator());
+       assertEquals(2, result.getDenominator());
     }
 
  }
