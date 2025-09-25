@@ -132,4 +132,6 @@ Indicar como texto en la subida la **URL de GitHub**
 > **NOTA. Acordarse de dar al botón de envío**
 
 Ejemplo resuelto:
-![](./docs/miw-iwvg-devops-demo.png)
+![](./docs/img.png)
+![](./docs/img1.png)
+
