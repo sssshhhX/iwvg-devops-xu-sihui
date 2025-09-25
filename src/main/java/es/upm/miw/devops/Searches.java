@@ -31,6 +31,16 @@ public class Searches {
                         .orElse(new Fraction(0, 1)))
                 .orElse(new Fraction(0, 1));
     }
+    //search c
+    public Stream<Double> findDecimalFractionByUserName(String name) {
+        return new UserDatabase().findAll()
+                .filter(user -> name.equals(user.getName()))
+                .flatMap(user -> user.getFractions().stream()
+                        .filter(Objects::nonNull)
+                )
+                .map(Fraction::decimal);
+    }
+
 
 }
 
