@@ -148,10 +148,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
-                    <argLine>
-                        -javaagent:${settings.localRepository}/org/mockito/mockito-core/${mockito.version}/mockito-core-${mockito.version}.jar
-                        -Xshare:off
-                    </argLine>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <argLine>${argLine} -Xshare:off</argLine>
                 </configuration>
             </plugin>
             <plugin>
