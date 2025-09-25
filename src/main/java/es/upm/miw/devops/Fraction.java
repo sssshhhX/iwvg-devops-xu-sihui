@@ -64,4 +64,31 @@ public class Fraction {
                 ", denominator=" + denominator +
                 '}';
     }
+    public boolean isProper() {
+        return Math.abs(numerator) < Math.abs(denominator);
+    }
+
+    public boolean isImproper() {
+        return Math.abs(numerator) >= Math.abs(denominator);
+    }
+    public boolean isEquivalent(Fraction fraction){
+        return fraction.getNumerator() * this.denominator == fraction.getDenominator() * this.numerator;
+    }
+    public Fraction add(Fraction fraction) {
+        int newNumerator = this.numerator * fraction.denominator + fraction.numerator * this.denominator;
+        int newDenominator = this.denominator * fraction.denominator;
+        return new Fraction(newNumerator, newDenominator);
+    }
+    public Fraction multiply(Fraction fraction) {
+        return new Fraction(this.numerator * fraction.numerator,
+                this.denominator * fraction.denominator);
+    }
+    public Fraction divide(Fraction fraction) {
+        if (fraction.numerator == 0) {
+            throw new ArithmeticException("Cannot divide by zero.");
+        }
+        return new Fraction(this.numerator * fraction.denominator,
+                this.denominator * fraction.numerator);
+    }
+
 }
