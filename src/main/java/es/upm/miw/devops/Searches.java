@@ -1,7 +1,7 @@
 package es.upm.miw.devops;
 
 import java.util.Objects;
-
+import java.util.stream.Stream;
 public class Searches {
 
     // search e
@@ -13,7 +13,13 @@ public class Searches {
                 .reduce(new Fraction(0, 1), Fraction::add);
     }
 
-
-
-
+    // search 1
+    public Stream<String> findUserIdBySomeProperFraction() {
+        return new UserDatabase().findAll()
+                .filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
+                .map(User::getId);
+    }
 }
+
+
+
