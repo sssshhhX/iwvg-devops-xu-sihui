@@ -91,4 +91,9 @@ public class Fraction {
                 this.denominator * fraction.numerator);
     }
 
+    public Fraction subtract(Fraction fraction) {
+        int newNumerator = this.numerator * fraction.denominator - fraction.numerator * this.denominator;
+        int newDenominator = this.denominator * fraction.denominator;
+        return new Fraction(newNumerator, newDenominator);
+    }
 }

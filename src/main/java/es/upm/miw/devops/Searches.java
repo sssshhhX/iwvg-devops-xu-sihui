@@ -19,6 +19,19 @@ public class Searches {
                 .filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
                 .map(User::getId);
     }
+
+    //search f
+    public Fraction findFractionSubtractionByUserName(String name) {
+        return new UserDatabase().findAll()
+                .filter(user -> name.equalsIgnoreCase(user.getName()))
+                .findFirst()
+                .map(user -> user.getFractions().stream()
+                        .filter(Objects::nonNull)
+                        .reduce(Fraction::subtract)
+                        .orElse(new Fraction(0, 1)))
+                .orElse(new Fraction(0, 1));
+    }
+
 }
 
 
